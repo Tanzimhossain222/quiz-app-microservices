@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "a4622188-87fd-4527-be30-03e9c33c4d34",
+		"name": "Quiz App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26596315",
+		"_collection_link": "https://cloudy-eclipse-51657.postman.co/workspace/toto-company~0ac46cf8-fa62-4c38-8f8f-db6040947bbb/collection/26596315-a4622188-87fd-4527-be30-03e9c33c4d34?action=share&source=collection_link&creator=26596315"
+	},
+	"item": [
+		{
+			"name": "Question",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/question/allQuestions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"question",
+								"allQuestions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/question/category/go",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"category",
+								"go"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question_title\": \"What is the default port number for a Spring Boot application?\",\r\n    \"option1\": \"8080\",\r\n    \"option2\": \"80\",\r\n    \"option3\": \"9090\",\r\n    \"option4\": \"8000\",\r\n    \"correct_answer\": \"8080\",\r\n    \"difficulty_level\": \"Easy\",\r\n    \"category\": \"SpringBoot\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/question/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n  {\r\n        \"id\": 27,\r\n        \"question_title\": \"Which annotation is used to mark a class as a Spring Boot application?\",\r\n        \"option1\": \"@SpringBootApplication\",\r\n        \"option2\": \"@SpringApplication\",\r\n        \"option3\": \"@EnableAutoConfiguration\",\r\n        \"option4\": \"@Configuration\",\r\n        \"correct_answer\": \"@SpringBootApplication\",\r\n        \"difficulty_level\": \"Easy\",\r\n        \"category\": \"SpringBoot\"\r\n    }\r\n    \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/question/update/27",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"update",
+								"27"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/question/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/question/delete/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"delete",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"question_title\": \"Which data structure is FIFO?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/question/update/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"update",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quiz",
+			"item": [
+				{
+					"name": "Create Quix",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/quiz/create?category=DataStructures&noOfQuestions=5&title=java",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"quiz",
+								"create"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "DataStructures"
+								},
+								{
+									"key": "noOfQuestions",
+									"value": "5"
+								},
+								{
+									"key": "title",
+									"value": "java"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Quiz",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/quiz/get/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"quiz",
+								"get",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Quiz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\":6,\r\n        \"response\":\"extends\"\r\n    },\r\n    {\r\n        \"id\":5,\r\n        \"response\":\"Package-private\"\r\n    } ,\r\n    {\r\n        \"id\":18,\r\n        \"response\":\"String\"\r\n    }, {\r\n        \"id\":1,\r\n        \"response\":\"Java Virtual Machine\"\r\n    }\r\n  \r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/quiz/submit/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"quiz",
+								"submit",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Question-v2",
+			"item": [
+				{
+					"name": "getQuestions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[1,21,22]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/question/getQuestions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"question",
+								"getQuestions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getScore",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\":6,\r\n        \"response\":\"extends\"\r\n    },\r\n    {\r\n        \"id\":5,\r\n        \"response\":\"Package-private\"\r\n    } ,\r\n    {\r\n        \"id\":18,\r\n        \"response\":\"String\"\r\n    }, {\r\n        \"id\":1,\r\n        \"response\":\"Java Virtual Machine\"\r\n    }\r\n  \r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/question/getScore",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"question",
+								"getScore"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "quiz-v2",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"Java\",\r\n    \"numberOfQuestions\": 5,\r\n    \"title\": \"Java\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url1}}/quiz/create",
+							"host": [
+								"{{url1}}"
+							],
+							"path": [
+								"quiz",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url1}}/quiz/get/2",
+							"host": [
+								"{{url1}}"
+							],
+							"path": [
+								"quiz",
+								"get",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Quiz Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\":6,\r\n        \"response\":\"extends\"\r\n    },\r\n    {\r\n        \"id\":5,\r\n        \"response\":\"Package-private\"\r\n    } ,\r\n    {\r\n        \"id\":18,\r\n        \"response\":\"String\"\r\n    }, {\r\n        \"id\":1,\r\n        \"response\":\"Java Virtual Machine\"\r\n    }\r\n  \r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url1}}/quiz/submit/2",
+							"host": [
+								"{{url1}}"
+							],
+							"path": [
+								"quiz",
+								"submit",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
